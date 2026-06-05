@@ -1,0 +1,59 @@
+.tb-sidebar {
+  width: 118px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow-y: scroll;
+}
+
+.tb-heading {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  padding: 0 4px;
+}
+
+.tb-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 6px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.tb-btn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.tb-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.tb-label {
+  font-size: 10px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.tb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 2px;
+  /* background se aplica inline ya que es dinámico por tipo de elemento */
+}

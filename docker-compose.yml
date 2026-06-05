@@ -1,0 +1,52 @@
+services:
+
+  db1:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: acciparte
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db1_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d acciparte"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      NODE_ENV: development
+      DATABASE_HOST: db1
+      DATABASE_PORT: 5432
+      DATABASE_NAME: acciparte
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      APP_PORT: 3030
+      JWT_SECRET: acciparte_super_secret_key_cambia_esto_en_produccion
+    ports:
+      - "3030:3030"
+    depends_on:
+      db1:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      PORT: 3000
+      REACT_APP_API_URL: http://localhost:3030
+      CHOKIDAR_USEPOLLING: "true"
+      WDS_SOCKET_PORT: 3000
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - backend
+
+volumes:
+  db1_data:

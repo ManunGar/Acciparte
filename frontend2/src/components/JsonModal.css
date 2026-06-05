@@ -1,0 +1,96 @@
+.jm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.jm-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  width: 640px;
+  max-width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jm-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.jm-btn-close {
+  background: none;
+  color: #6b7280;
+  font-size: 20px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.jm-btn-close:hover {
+  background: #f3f4f6;
+}
+
+.jm-pre {
+  flex: 1;
+  overflow-y: auto;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 55vh;
+}
+
+.jm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.jm-btn-copy {
+  background: #3b82f6;
+  color: #fff;
+  padding: 8px 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.jm-btn-copy:hover {
+  background: #2563eb;
+}
+
+.jm-btn-download {
+  background: #10b981;
+  color: #fff;
+  padding: 8px 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.jm-btn-download:hover {
+  background: #059669;
+}
